@@ -1,5 +1,5 @@
+import 'package:counter_app/business_logic/counter_bloc/bloc/theme_bloc.dart';
 import 'package:counter_app/business_logic/counter_bloc/counter_bloc.dart';
-import 'package:counter_app/business_logic/theme_bloc/theme_bloc.dart';
 import 'package:counter_app/presentation/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

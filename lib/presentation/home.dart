@@ -1,7 +1,8 @@
 import 'package:counter_app/business_logic/counter_bloc/counter_bloc.dart';
-import 'package:counter_app/business_logic/theme_bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../business_logic/counter_bloc/bloc/theme_bloc.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -15,19 +16,19 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemeBloc, ThemeState>(
+    return BlocBuilder<ThemeBloc, Color>(
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: state.color,
+          backgroundColor: state,
           appBar: AppBar(
             backgroundColor: Colors.blue,
             title: Text(widget.title),
             actions: [
-              IconButton(
-                  onPressed: () {
-                    () => context.read<ThemeBloc>().add(DarkThemeEvent());
-                  },
-                  icon: const Icon(Icons.light_mode))
+              Switch(
+                  value: context.read<ThemeBloc>().state == Colors.black,
+                  onChanged: (value) {
+                    context.read<ThemeBloc>().add(ThemeSwitched(value));
+                  }),
             ],
           ),
           body: Center(
