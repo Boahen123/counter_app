@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'counter_state.dart';
@@ -10,7 +11,7 @@ final class CounterDecrementEvent extends CounterEvent {}
 /// Create a class for Counter Bloc
 class CounterBloc extends Bloc<CounterEvent, CounterState> {
   // Create a constructor to initialize the state
-  CounterBloc() : super(CounterState()) {
+  CounterBloc() : super(const CounterState()) {
     // Call the on<event> method to listen to the events
     on<CounterIncrementEvent>((event, emit) {
       // Copy the state object to update the state
