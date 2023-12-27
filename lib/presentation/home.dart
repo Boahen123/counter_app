@@ -2,8 +2,6 @@ import 'package:counter_app/business_logic/counter_bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../business_logic/counter_bloc/theme_bloc/bloc/theme_bloc_bloc.dart';
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -23,11 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
               onPressed: () {
-                if (context.read<ChangeThemeBloc>().state.name == "dark") {
-                  context.read<ChangeThemeBloc>().add(LightThemeEvent());
-                } else {
-                  context.read<ChangeThemeBloc>().add(DarkThemeEvent());
-                }
+             
               },
               icon: const Icon(Icons.light_mode))
         ],
