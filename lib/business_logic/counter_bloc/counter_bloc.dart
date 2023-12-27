@@ -7,7 +7,7 @@ sealed class CounterEvent {}
 final class CounterIncrementEvent extends CounterEvent {}
 final class CounterDecrementEvent extends CounterEvent {}
 
-// Create a class for Counter Bloc
+/// Create a class for Counter Bloc
 class CounterBloc extends Bloc<CounterEvent, CounterState> {
   // Create a constructor to initialize the state
   CounterBloc() : super(CounterState()) {
