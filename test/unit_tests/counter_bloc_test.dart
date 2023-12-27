@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('CounterBloc', () {
-    test('initial state is 0', () {
+    test('initial state of counter is 0', () {
       expect(CounterBloc().state, 0);
     });
   });
